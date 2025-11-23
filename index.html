@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TOKKA — Talk of the Tote</title>
+  <meta name="description" content="Tokka — sustainable, customizable tote bags. Carry your personality." />
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <img src="assets/images/logo.png" alt="TOKKA logo" class="logo" id="logo">
+      <nav class="nav">
+        <a href="designs.html">Designs</a>
+        <a href="customize.html">Customize</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="hero-inner container">
+      <h1 class="brand-name">TOKKA</h1>
+      <p class="tagline">Sustainable. Custom. Unapologetically you.</p>
+      <p class="desc">
+        TOKKA creates sustainable, customizable tote bags so you can carry your identity. Each tote is a canvas — your interests, your vibe, your story.
+      </p>
+      <div class="cta-row">
+        <a class="btn" href="designs.html">See Designs</a>
+        <a class="btn outline" href="customize.html">Customize Yours</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> TOKKA • Talk of the Tote</p>
+    </div>
+  </footer>
+
+  <script>
+    // small JS to show current year and graceful fallbacks
+    document.getElementById('year').innerText = new Date().getFullYear();
+    // if logo file missing, hide it gracefully
+    const logo = document.getElementById('logo');
+    logo.onerror = () => { logo.style.display = 'none'; }
+  </script>
+</body>
+</html>
