@@ -1,0 +1,120 @@
+/* TOKKA — Basic site styles (black + pastel theme) */
+
+:root{
+  --bg: #000000;
+  --text: #F5E6D3; /* cream */
+  --muted: #EAD8C0;
+  --accent: #FFBD9B; /* peach accent */
+  --mint: #B2F2BB;
+  --lav: #CBA6FF;
+  --button-radius: 10px;
+  --max-width: 1000px;
+  --container-padding: 24px;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* Container */
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:0 var(--container-padding);
+}
+
+/* Header */
+.site-header{
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding:18px 0;
+}
+.site-header .container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  height:52px;
+  width:auto;
+  object-fit:contain;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
+}
+.nav a{
+  color:var(--muted);
+  margin-left:18px;
+  text-decoration:none;
+  font-weight:500;
+  letter-spacing:0.2px;
+}
+.nav a:hover{color:var(--lav)}
+
+/* Hero */
+.hero{
+  padding:84px 0;
+  display:flex;
+  align-items:center;
+}
+.hero-inner{
+  text-align:left;
+}
+.brand-name{
+  font-size:72px;
+  margin:0 0 12px 0;
+  letter-spacing:4px;
+  color:var(--text);
+}
+.tagline{
+  font-size:18px;
+  color:var(--mint);
+  margin:0 0 18px 0;
+  font-weight:600;
+}
+.desc{
+  color:var(--muted);
+  max-width:720px;
+  margin-bottom:24px;
+  font-size:16px;
+}
+
+/* Buttons */
+.cta-row{display:flex;gap:12px}
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:var(--button-radius);
+  background:linear-gradient(90deg,var(--lav),var(--mint));
+  color:#000;
+  text-decoration:none;
+  font-weight:700;
+}
+.btn.outline{
+  background:transparent;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.06);
+}
+
+/* Footer */
+.site-footer{
+  margin-top:48px;
+  padding:28px 0;
+  border-top:1px solid rgba(255,255,255,0.04);
+  color:var(--muted);
+  text-align:center;
+  font-size:14px;
+}
+
+/* Responsive */
+@media (max-width:720px){
+  .brand-name{font-size:48px}
+  .nav{display:none}
+  .hero{padding:48px 0}
+}
