@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Designs - TOKKA</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #f5c7b8;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    nav a {
+      color: #f5c7b8;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #a0d6b4;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .design-card {
+      background-color: #111;
+      border: 2px solid #f5c7b8;
+      border-radius: 12px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .design-card img {
+      width: 100%;
+      display: block;
+    }
+
+    .design-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #a0d6b4;
+    }
+
+    .design-name {
+      padding: 10px;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-top: 1px solid #444;
+    }
+  </style>
+</head>
+<body>
+
+  <header>TOKKA</header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="designs.html">Designs</a>
+    <a href="customize.html">Customize</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="container">
+    <!-- Example designs -->
+    <div class="design-card">
+      <img src="design1.png" alt="Design 1">
+      <div class="design-name">Anime Vibes</div>
+    </div>
+
+    <div class="design-card">
+      <img src="design2.png" alt="Design 2">
+      <div class="design-name">Floral Dream</div>
+    </div>
+
+    <div class="design-card">
+      <img src="design3.png" alt="Design 3">
+      <div class="design-name">Minimalist Lines</div>
+    </div>
+
+    <div class="design-card">
+      <img src="design4.png" alt="Design 4">
+      <div class="design-name">Retro Pop</div>
+    </div>
+
+    <div class="design-card">
+      <img src="design5.png" alt="Design 5">
+      <div class="design-name">Music Beats</div>
+    </div>
+
+    <div class="design-card">
+      <img src="design6.png" alt="Design 6">
+      <div class="design-name">Custom Quote</div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 TOKKA • Talk of the Tote
+  </footer>
+
+</body>
+</html>
