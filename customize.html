@@ -1,226 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customize - TOKKA</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      background-color: #000;
-      color: #f5c7b8;
-      font-family: 'Arial', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize Your TOKKA Tote</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #FADADD;
+        }
 
-    header {
-      text-align: center;
-      padding: 20px;
-      font-size: 2.2rem;
-      font-weight: bold;
-    }
+        h1 {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 36px;
+            text-shadow: 0 0 10px #FADADD;
+        }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin-bottom: 40px;
-    }
+        .custom-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 50px;
+            padding: 0 50px 50px 50px;
+        }
 
-    nav a {
-      color: #f5c7b8;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+        .custom-left, .custom-right {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
 
-    nav a:hover {
-      color: #a0d6b4;
-    }
+        .custom-left img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255, 218, 193, 0.6);
+        }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
-      gap: 50px;
-      padding: 20px;
-    }
+        .form-group {
+            margin: 20px 0;
+        }
 
-    .customize-form {
-      max-width: 400px;
-      width: 100%;
-    }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #FFDAC1;
+            text-shadow: 0 0 5px #FFDAC1;
+        }
 
-    h2 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-    }
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            max-width: 300px;
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+        }
 
-    label {
-      display: block;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
+        .colors {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
 
-    .quantity-container {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid #fff;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    .quantity-container button {
-      background-color: #f5c7b8;
-      color: #000;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      font-weight: bold;
-      border-radius: 5px;
-    }
+        .color-option:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 15px #FFDAC1;
+        }
 
-    .quantity-container input {
-      width: 50px;
-      text-align: center;
-      background-color: #111;
-      color: #f5c7b8;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      padding: 6px;
-    }
+        .selected {
+            box-shadow: 0 0 15px #FADADD;
+        }
 
-    .color-options {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
+        .add-to-cart-btn {
+            margin-top: 30px;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background-color: #FADADD;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    .color-options button {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border: 2px solid #f5c7b8;
-      cursor: pointer;
-      outline: none;
-      transition: 0.3s;
-    }
+        .add-to-cart-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #FFDAC1;
+        }
 
-    .color-options button.selected {
-      border: 3px solid #a0d6b4;
-    }
+        /* Popup styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #111;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 30px #FADADD;
+            color: #FADADD;
+            z-index: 1000;
+            text-align: center;
+            max-width: 80%;
+        }
 
-    /* specific colors */
-    .black { background-color: black; }
-    .white { background-color: white; }
-    .pastel { background-color: #f5c7b8; }
+        .popup h2 {
+            margin-bottom: 20px;
+        }
 
-    button#add-to-cart {
-      background-color: #f5c7b8;
-      color: #000;
-      width: 100%;
-      padding: 12px;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-      border: none;
-      transition: 0.3s;
-    }
+        .popup button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #FADADD;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-    button#add-to-cart:hover {
-      background-color: #a0d6b4;
-    }
+        .popup button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #FFDAC1;
+        }
 
-    .bag-preview img {
-      max-width: 300px;
-      width: 100%;
-      border: 2px solid #f5c7b8;
-      border-radius: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      margin-top: 40px;
-      border-top: 1px solid #444;
-    }
-  </style>
+        @media(max-width: 900px) {
+            .custom-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>TOKKA</header>
+    <h1>Customize Your TOKKA Tote</h1>
 
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="designs.html">Designs</a>
-    <a href="customize.html">Customize</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+    <div class="custom-container">
+        <div class="custom-left">
+            <img src="plain-tote.jpeg" alt="Plain TOKKA Tote">
+        </div>
 
-  <div class="container">
+        <div class="custom-right">
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+            </div>
 
-    <div class="customize-form">
-      <h2>Customize Your Tote</h2>
+            <div class="form-group">
+                <label>Choose Color:</label>
+                <div class="colors">
+                    <div class="color-option" style="background-color: black;" onclick="selectColor(this)"></div>
+                    <div class="color-option" style="background-color: white;" onclick="selectColor(this)"></div>
+                    <div class="color-option" style="background-color: #FFDAC1;" onclick="selectColor(this)"></div>
+                    <div class="color-option" style="background-color: #A0E7E5;" onclick="selectColor(this)"></div>
+                    <div class="color-option" style="background-color: #B4F8C8;" onclick="selectColor(this)"></div>
+                </div>
+            </div>
 
-      <label>Quantity</label>
-      <div class="quantity-container">
-        <button type="button" id="decrease">-</button>
-        <input type="number" id="quantity" value="1" min="1">
-        <button type="button" id="increase">+</button>
-      </div>
+            <div class="form-group">
+                <label for="customText">Add Your Custom Text / Image:</label>
+                <input type="text" id="customText" name="customText" placeholder="Your design idea...">
+            </div>
 
-      <label>Choose Color</label>
-      <div class="color-options">
-        <button class="black selected" data-color="Black"></button>
-        <button class="white" data-color="White"></button>
-        <button class="pastel" data-color="Pastel"></button>
-      </div>
-
-      <button id="add-to-cart">Add to Cart</button>
+            <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+        </div>
     </div>
 
-    <div class="bag-preview">
-      <h2>Bag Preview</h2>
-      <img src="plain-tote.png" alt="Plain Tote Bag">
+    <!-- Popup -->
+    <div class="popup" id="popup">
+        <h2>Item Added to Cart!</h2>
+        <p id="popup-text"></p>
+        <button onclick="closePopup()">Close</button>
     </div>
 
-  </div>
+    <script>
+        let selectedColor = '';
 
-  <footer>
-    &copy; 2025 TOKKA • Talk of the Tote
-  </footer>
+        function selectColor(element) {
+            const colors = document.querySelectorAll('.color-option');
+            colors.forEach(color => color.classList.remove('selected'));
+            element.classList.add('selected');
+            selectedColor = element.style.backgroundColor;
+        }
 
-  <script>
-    // Quantity controls
-    const quantityInput = document.getElementById('quantity');
-    document.getElementById('increase').addEventListener('click', () => {
-      quantityInput.value = parseInt(quantityInput.value) + 1;
-    });
-    document.getElementById('decrease').addEventListener('click', () => {
-      if (parseInt(quantityInput.value) > 1) {
-        quantityInput.value = parseInt(quantityInput.value) - 1;
-      }
-    });
+        function addToCart() {
+            const quantity = document.getElementById('quantity').value;
+            const customText = document.getElementById('customText').value || 'No custom text';
+            const color = selectedColor || 'No color selected';
 
-    // Color selection
-    const colorButtons = document.querySelectorAll('.color-options button');
-    colorButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        colorButtons.forEach(b => b.classList.remove('selected'));
-        btn.classList.add('selected');
-      });
-    });
+            const popupText = `
+                Quantity: ${quantity}<br>
+                Color: ${color}<br>
+                Custom Text/Image: ${customText}
+            `;
 
-    // Add to cart functionality (example alert)
-    document.getElementById('add-to-cart').addEventListener('click', () => {
-      const qty = quantityInput.value;
-      const color = document.querySelector('.color-options .selected').dataset.color;
-      alert(`Added ${qty} ${color} tote bag(s) to your cart!`);
-    });
-  </script>
+            document.getElementById('popup-text').innerHTML = popupText;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
