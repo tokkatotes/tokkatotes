@@ -1,0 +1,37 @@
+/* Base settings */
+body {
+    background-color: black;
+    color: #FADADD; /* pastel pink, adjust as you like */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Links */
+a {
+    color: #A0E7E5; /* pastel blue */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFAEBC; /* pastel pink on hover */
+}
+
+/* Headers */
+h1, h2, h3 {
+    color: #FFDAC1; /* pastel orange */
+}
+
+/* Buttons example */
+button {
+    background-color: #B5EAEA; /* pastel mint */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: black;
+}
+
+button:hover {
+    background-color: #FF9CEE; /* pastel pink */
+}
