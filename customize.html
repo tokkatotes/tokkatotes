@@ -40,6 +40,9 @@
             max-width: 350px;
             border-radius: 20px;
             box-shadow: 0 0 20px rgba(255, 218, 193, 0.6);
+            transition: background-color 0.5s ease, filter 0.5s ease;
+            background-color: white;
+            padding: 20px;
         }
 
         .form-group {
@@ -158,7 +161,7 @@
 
     <div class="custom-container">
         <div class="custom-left">
-            <img src="plain-tote.jpeg" alt="Plain TOKKA Tote">
+            <img src="plain-tote.jpeg" alt="Plain TOKKA Tote" id="tote-image">
         </div>
 
         <div class="custom-right">
@@ -202,6 +205,17 @@
             colors.forEach(color => color.classList.remove('selected'));
             element.classList.add('selected');
             selectedColor = element.style.backgroundColor;
+
+            // Update tote preview color
+            const tote = document.getElementById('tote-image');
+            if(selectedColor === 'white') {
+                tote.style.filter = 'invert(100%)';
+            } else if(selectedColor === 'black') {
+                tote.style.filter = 'invert(0%)';
+            } else {
+                tote.style.filter = 'none';
+                tote.style.backgroundColor = selectedColor;
+            }
         }
 
         function addToCart() {
