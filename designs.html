@@ -6,101 +6,132 @@
     <title>TOKKA Designs</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Page-specific styles */
         body {
-            background-color: #000; /* solid black background */
-            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #f8f0ff; /* pastel text */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        h1 {
-            text-align: center;
-            color: #FADADD; /* pastel pink */
-            margin: 40px 0;
-            text-shadow: 0 0 10px #FADADD;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header a {
+            color: #f8f0ff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        header a:hover {
+            color: #ffb3c1; /* pastel hover effect */
+        }
+
+        .logo {
+            height: 60px;
         }
 
         .designs-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            padding: 0 50px 50px 50px;
+            padding: 50px;
         }
 
-        .design-item {
-            background-color: #111; /* slightly lighter black for contrast */
-            border-radius: 20px;
-            padding: 20px;
+        .design-card {
+            background-color: #111;
+            border: 2px solid #333;
+            border-radius: 12px;
+            padding: 15px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
+            transition: transform 0.3s, border-color 0.3s;
         }
 
-        .design-item:hover {
-            transform: scale(1.08);
-            box-shadow: 0 0 20px rgba(255, 218, 193, 0.7); /* pastel glow */
-        }
-
-        .design-item img {
-            width: 100%;
-            max-width: 250px;
-            border-radius: 15px;
-            margin-bottom: 15px;
-            transition: box-shadow 0.3s, transform 0.3s;
-        }
-
-        .design-item img:hover {
-            box-shadow: 0 0 25px rgba(255, 218, 193, 0.6);
+        .design-card:hover {
             transform: scale(1.05);
+            border-color: #ffb3c1;
         }
 
-        .design-name {
-            color: #FFDAC1; /* pastel orange */
-            font-size: 18px;
-            font-weight: bold;
-            text-shadow: 0 0 8px #FFDAC1;
-            transition: text-shadow 0.3s;
+        .design-card img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
-        .design-name:hover {
-            text-shadow: 0 0 20px #FFDAC1, 0 0 30px #FADADD;
+        .design-card h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #f8f0ff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #000;
+            color: #f8f0ff;
+        }
+
+        @media(max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+            .designs-container {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Our Designs</h1>
+    <header>
+        <a href="index.html"><img src="Tokka.png" alt="TOKKA Logo" class="logo"></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="customize.html">Customize</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
 
-    <div class="designs-container">
-        <div class="design-item">
-            <img src="design1.png.png" alt="Design 1">
-            <div class="design-name">Anime Vibes</div>
+    <main>
+        <div class="designs-container">
+            <div class="design-card">
+                <img src="images/design1.png" alt="Enemy Vibes">
+                <h3>Enemy Vibes</h3>
+            </div>
+            <div class="design-card">
+                <img src="images/design2.png" alt="Florida Dream">
+                <h3>Florida Dream</h3>
+            </div>
+            <div class="design-card">
+                <img src="images/design3.png" alt="Minimalistic Lines">
+                <h3>Minimalistic Lines</h3>
+            </div>
+            <div class="design-card">
+                <img src="images/design4.png" alt="Retro Pope">
+                <h3>Retro Pope</h3>
+            </div>
+            <div class="design-card">
+                <img src="images/design5.png" alt="Music Beats">
+                <h3>Music Beats</h3>
+            </div>
+            <div class="design-card">
+                <img src="images/design6.png" alt="Custom Tote">
+                <h3>Custom Tote</h3>
+            </div>
         </div>
+    </main>
 
-        <div class="design-item">
-            <img src="design2.png.png" alt="Design 2">
-            <div class="design-name">Florida Dream</div>
-        </div>
-
-        <div class="design-item">
-            <img src="design3.png.png" alt="Design 3">
-            <div class="design-name">Minimalistic Lines</div>
-        </div>
-
-        <div class="design-item">
-            <img src="design4.png.png" alt="Design 4">
-            <div class="design-name">Retro Pope</div>
-        </div>
-
-        <div class="design-item">
-            <img src="design5.png.png" alt="Design 5">
-            <div class="design-name">Music Beats</div>
-        </div>
-
-        <div class="design-item">
-            <img src="design6.png.png" alt="Design 6">
-            <div class="design-name">Custom Tote</div>
-        </div>
-    </div>
+    <footer>
+        © 2025 TOKKA • Talk of the Tote
+    </footer>
 </body>
 </html>
