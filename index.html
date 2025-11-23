@@ -1,52 +1,137 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TOKKA — Talk of the Tote</title>
-  <meta name="description" content="Tokka — sustainable, customizable tote bags. Carry your personality." />
-  <link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOKKA - Talk of the Tote</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #000;
+            color: #FADADD; /* pastel text color */
+        }
+
+        /* Header / Navbar */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header img {
+            width: 150px;
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: #FADADD;
+            font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #FFDAC1;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 80vh;
+            padding: 0 20px;
+            background: url('hero-bg.jpg') center center/cover no-repeat; /* optional hero background */
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin: 0;
+            text-shadow: 0 0 15px #FADADD;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin: 20px 0 40px;
+            max-width: 600px;
+            text-shadow: 0 0 10px #FFDAC1;
+        }
+
+        .hero .btn {
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            background-color: #FADADD;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .hero .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #FFDAC1;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #FADADD;
+            font-size: 14px;
+            background-color: #000;
+        }
+
+        /* Responsive */
+        @media(max-width: 900px) {
+            .hero h1 {
+                font-size: 45px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <img src="assets/images/logo.png" alt="TOKKA logo" class="logo" id="logo">
-      <nav class="nav">
-        <a href="designs.html">Designs</a>
-        <a href="customize.html">Customize</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="hero">
-    <div class="hero-inner container">
-      <h1 class="brand-name">TOKKA</h1>
-      <p class="tagline">Sustainable. Custom. Unapologetically you.</p>
-      <p class="desc">
-        TOKKA creates sustainable, customizable tote bags so you can carry your identity. Each tote is a canvas — your interests, your vibe, your story.
-      </p>
-      <div class="cta-row">
+    <!-- Header / Navbar -->
+    <header>
+        <img src="Tokka.png" alt="TOKKA Logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="designs.html">Designs</a>
+            <a href="customize.html">Customize</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>TOKKA</h1>
+        <p>Sustainable. Custom. Unapologetically you.<br>Carry your identity. Each tote is a canvas — your interests, your vibe, your story.</p>
         <a class="btn" href="designs.html">See Designs</a>
-        <a class="btn outline" href="customize.html">Customize Yours</a>
-      </div>
-    </div>
-  </main>
+        <a class="btn" href="customize.html" style="margin-left: 20px;">Customize Yours</a>
+    </section>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> TOKKA • Talk of the Tote</p>
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer>
+        © 2025 TOKKA • Talk of the Tote
+    </footer>
 
-  <script>
-    // small JS to show current year and graceful fallbacks
-    document.getElementById('year').innerText = new Date().getFullYear();
-    // if logo file missing, hide it gracefully
-    const logo = document.getElementById('logo');
-    logo.onerror = () => { logo.style.display = 'none'; }
-  </script>
 </body>
 </html>
