@@ -7,42 +7,64 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* Page-specific styles */
+        body {
+            background-color: #000; /* solid black background */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #FADADD; /* pastel pink */
+            margin: 40px 0;
+            text-shadow: 0 0 10px #FADADD;
+        }
+
         .designs-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            padding: 50px;
+            padding: 0 50px 50px 50px;
         }
 
         .design-item {
-            background-color: #111; /* Slightly lighter than black for contrast */
-            border-radius: 15px;
+            background-color: #111; /* slightly lighter black for contrast */
+            border-radius: 20px;
             padding: 20px;
             text-align: center;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
         }
 
         .design-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 0 20px rgba(255, 218, 193, 0.7); /* pastel glow */
         }
 
         .design-item img {
             width: 100%;
             max-width: 250px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin-bottom: 15px;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+
+        .design-item img:hover {
+            box-shadow: 0 0 25px rgba(255, 218, 193, 0.6);
+            transform: scale(1.05);
         }
 
         .design-name {
             color: #FFDAC1; /* pastel orange */
             font-size: 18px;
             font-weight: bold;
+            text-shadow: 0 0 8px #FFDAC1;
+            transition: text-shadow 0.3s;
         }
 
-        h1 {
-            text-align: center;
-            color: #FADADD; /* pastel pink */
-            margin-top: 40px;
+        .design-name:hover {
+            text-shadow: 0 0 20px #FFDAC1, 0 0 30px #FADADD;
         }
     </style>
 </head>
@@ -52,7 +74,7 @@
     <div class="designs-container">
         <div class="design-item">
             <img src="design1.png.png" alt="Design 1">
-            <div class="design-name">Enemy Vibes</div>
+            <div class="design-name">Anime Vibes</div>
         </div>
 
         <div class="design-item">
